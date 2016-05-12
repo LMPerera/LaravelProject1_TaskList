@@ -1,44 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
+        <title>My Task List</title>
     </head>
     <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
+        <div>
+            <h1>My Task List</h1>
+            <form method="POST">
+                <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                <input type="hidden" name="_method" value="POST" />
+                List name: <input type="text" name="lname"><br>
+                <br>
+                Description: <input type="text" name="description">
+                <input type="submit" value="Submit">
+            </form>
+            <br>
+            <br>
+            <div>
+                <table style="width:20%">
+                  <tr>
+                    <th>List name</th>
+                    <th>Description</th> 
+                  </tr>
+                  <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td> 
+                  </tr>
+                </table>
             </div>
         </div>
     </body>
